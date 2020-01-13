@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barn", "Barn\Barn.csproj", "{E79B879A-369D-453E-A2E4-A9686745FC67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E79B879A-369D-453E-A2E4-A9686745FC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E79B879A-369D-453E-A2E4-A9686745FC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E79B879A-369D-453E-A2E4-A9686745FC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E79B879A-369D-453E-A2E4-A9686745FC67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82A43B14-9761-44FF-A16F-AC38A6479409}
+	EndGlobalSection
+EndGlobal
