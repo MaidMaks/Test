@@ -2,76 +2,47 @@
 
 namespace Barn
 {
-    class Chicken
+    interface Simple<T>
     {
-        public string Name { get; set; }
+        int Gather(T obj, int ammount);
+    }
 
-        public Chicken(string name)
-        { Name = name; }
+    class Animal
+    {
+        public string Name { get; }
+        public int mx { get; }
+        public int mn { get; }
+        private Random rnd = new Random();
+        public Animal(string name, int max, int min)
+        { Name = name; mx = max;mn = min; }
 
-        public int gather()
+        public int Gather()
         {
-            Random rnd = new Random();
-            return rnd.Next(0, 2);
+            return rnd.Next(mn, mx+1);
         }
     }
 
-    class Cow
+    sealed class Chicken:Animal
     {
-        public string Name { get; set; }
-
-        public Cow(string name)
-        { Name = name; }
-
-        public int gather()
-        {
-            Random rnd = new Random();
-            return rnd.Next(8, 13);
-        }
+        public Chicken(string name, int max, int min) :base(name,max,min)
+        {  }
     }
 
-    class Gather
+    sealed class Cow:Animal
     {
-        private string[] dictionary = new string[30] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"}; 
-        private int ChickenCount;
-        private int CowCount;
+        public Cow(string name, int max, int min) : base(name, max, min)
+        { }
+    }
 
-        public Gather(int Chickens, int Cows)
+    class Gath:Simple<Animal>
+    {
+        public int Gather(Animal animal, int ammount)
         {
-            ChickenCount = Chickens;
-            CowCount = Cows;
+            int outc= 0;
+            for (int i = 0; i < ammount; i++)
+                outc += animal.Gather();
+            return outc;
         }
 
-        public void get()
-        {
-            int ChickenOutCome=0;
-            int CowsOutCome=0;
-            string CowsNames = "";
-            string ChicknNames = "";
-
-            Cow[] cows = new Cow[CowCount];
-            for (int i = 0; i < CowCount; i++)
-            {
-                cows[i] =new Cow( dictionary[i]);
-                CowsOutCome += cows[i].gather();
-                if (i == 0)
-                    CowsNames += cows[i].Name;
-                else
-                    CowsNames += ", " + cows[i].Name;
-            }
-
-            Chicken[] chickens = new Chicken[ChickenCount];
-            for (int i = 0; i < ChickenCount; i++)
-            {
-                chickens[i] = new Chicken(dictionary[i+10]);
-                ChickenOutCome += chickens[i].gather();
-                if(i==0)
-                    ChicknNames += chickens[i].Name;
-                else
-                    ChicknNames +=", " +chickens[i].Name;
-            }
-
-            Console.WriteLine("Cows outcome="+ CowsOutCome+ "\r\nCows names:\r\n"+CowsNames+ "\r\n\r\nChickens outcome=" + ChickenOutCome+ "\r\n"+ "Chickens names:\r\n"+ ChicknNames);
-        }
     }
 }
