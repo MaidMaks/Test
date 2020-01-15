@@ -7,11 +7,6 @@ namespace Barn
 
         static void Main(string[] args)
         {
-            /*
-            Gather gather = new Gather(20, 10);
-            gather.get();
-            Console.ReadKey();
-            */
 
             Chicken chicken = new Chicken("Chiken", 1, 0);
             Cow cow = new Cow("Cow", 12, 8);
