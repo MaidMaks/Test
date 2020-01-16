@@ -2,11 +2,6 @@
 
 namespace Barn
 {
-    interface Simple<T>
-    {
-        int Gather(T obj, int ammount);
-    }
-
     class Animal
     {
         public string Name { get; }
@@ -34,7 +29,7 @@ namespace Barn
         { }
     }
 
-    class Gath:Simple<Animal>
+    class Gath
     {
         public int Gather(Animal animal, int ammount)
         {
