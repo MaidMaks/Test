@@ -4,9 +4,9 @@ namespace Barn
 {
     class Animal
     {
-        public string Name { get; }
-        public int mx { get; }
-        public int mn { get; }
+        private string Name { get; }
+        private int mx { get; }
+        private int mn { get; }
         private Random rnd = new Random();
         public Animal(string name, int max, int min)
         { Name = name; mx = max;mn = min; }
